@@ -1,10 +1,10 @@
 # we using latest ubuntu version
 FROM ubuntu:latest
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /home/bebone
+WORKDIR /home/bebone
 
-COPY app/* /usr/src/app/
+COPY . /home/bebone
 
 RUN apt-get update
 RUN apt-get upgrade
@@ -14,8 +14,7 @@ RUN apt-get install -y ninja-build
 RUN apt-get install -y clang 
 RUN apt-get install -y cmake 
 
-RUN git clone https://github.com/Maksasj/bebone 3dparty/bebone
+RUN git clone --recursive https://github.com/Maksasj/bebone 3dparty/bebone
 
-RUN cmake -B build -G Ninja
-RUN cmake --build build
+CMD bash build.sh
 

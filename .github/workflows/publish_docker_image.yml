@@ -22,6 +22,6 @@ jobs:
 
     - name: Build the Bebone Docker image
       run: |
-        docker build . --tag ghcr.io/Maksasj/bebone_docker:latest
-        docker run ghcr.io/Maksasj/bebone_docker:latest
-        docker push ghcr.io/Maksasj/bebone_docker:latest
+        docker build . --tag ghcr.io/maksasj/bebone_docker:latest
+        docker run ghcr.io/maksasj/bebone_docker:latest
+        docker push ghcr.io/maksasj/bebone_docker:latest
